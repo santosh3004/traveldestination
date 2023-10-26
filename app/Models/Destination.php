@@ -9,4 +9,10 @@ class destination extends Model
 {
     use HasFactory;
     protected $fillable=['name','cities','img'];
+
+    public function packages()
+    {
+        return $this->belongsToMany(Package::class);
+    }
+
 }
