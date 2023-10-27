@@ -17,11 +17,11 @@ class DestinationSeeder extends Seeder
      */
     public function run()
     {
-        //multiple db insertion seeder
+       
         DB::table('destinations')->insert([
             'name' => 'Nepal',
             'cities' => '3',
-            
+
         ]);
         DB::table('destinations')->insert([
             'name' => 'Thailand',

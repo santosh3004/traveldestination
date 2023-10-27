@@ -16,10 +16,11 @@ return new class extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('destination_id')->constrained()->onDelete('cascade');
-            $table->string('destination');
             $table->string('duration');
             $table->string('price');
             $table->string('description');
+            $table->tinyInteger('persons');
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

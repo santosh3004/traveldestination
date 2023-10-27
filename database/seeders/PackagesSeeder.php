@@ -16,27 +16,15 @@ class PackagesSeeder extends Seeder
      */
     public function run()
     {
-
+        for( $i=1; $i<=3; $i++){
             DB::table('packages')->insert([
-                'destination' => 'Nepal',
+                'persons'=>fake()->numberBetween(1,10),
                 'duration' => '3',
-                'price' => '1000',
-                'description' => 'Nepal is a beautiful country',
-                'destination_id' => '1',
+                'price' => fake()->numberBetween(100,3000),
+                'description' => fake()->sentence(),
+                'destination_id' => $i,
+                'img'=>'package-'.$i.'.jpg',
             ]);
-            DB::table('packages')->insert([
-                'destination' => 'Thailand',
-                'duration' => '5',
-                'price' => '2000',
-                'description' => 'Thailand is a beautiful country',
-                'destination_id' => '2',
-            ]);
-            DB::table('packages')->insert([
-                'destination' => 'Japan',
-                'duration' => '4',
-                'price' => '3000',
-                'description' => 'Japan is a beautiful country',
-                'destination_id' => '3',
-            ]);
+        }
     }
 }

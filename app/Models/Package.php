@@ -9,10 +9,10 @@ class Package extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['destination', 'duration', 'price', 'description'];
+    protected $fillable = ['destination', 'duration', 'price', 'description','persons'];
 
     public function destinations()
     {
-        return $this->hasMany(Destination::class);
+        return $this->hasOne(Destination::class,'id','destination_id');
     }
 }
