@@ -44,13 +44,15 @@
             <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
             <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
             <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Newsletter</h6>
-            <div class="w-100">
+            <div class="w-100"><form action="{{route('subscription')}}" method="POST" enctype="multipart/form-data">
                 <div class="input-group">
+@csrf
                     <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
                     <div class="input-group-append">
                         <button class="btn btn-primary px-3">Sign Up</button>
                     </div>
-                </div>
+
+                </div> </form>
             </div>
         </div>
     </div>
