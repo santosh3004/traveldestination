@@ -23,7 +23,7 @@ Route::get('/services', [FrontController::class,'services'])->name('services');
 Route::get('/packages', [FrontController::class,'packages'])->name('packages');
 Route::get('/contact', [FrontController::class,'contact'])->name('contact');
 
-Route::get('/send-email',[EmailController::class,'index'])->name('sendmail');
+Route::post('/send-email',[EmailController::class,'index'])->name('sendmail');
 
 
 Route::get('/dashboard', function () {

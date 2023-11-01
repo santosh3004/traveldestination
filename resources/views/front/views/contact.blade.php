@@ -19,7 +19,7 @@
 
 
     <!-- Booking Start -->
-    @include('front.incl.booking')
+    {{-- @include('front.incl.booking') --}}
     <!-- Booking End -->
 
 
@@ -35,8 +35,8 @@
                     <div class="contact-form bg-white" style="padding: 30px;">
                         <div id="success"></div>
                         <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            @csrf
                             <div class="form-row">
+                                <input id="csrf" hidden disabled value="{{csrf_token()}}" />
                                 <div class="control-group col-sm-6">
                                     <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
                                         required="required" data-validation-required-message="Please enter your name" />

@@ -10,18 +10,22 @@ $(function () {
             var email = $("input#email").val();
             var subject = $("input#subject").val();
             var message = $("textarea#message").val();
+            var CSRF=$("input#csrf").val();
 
             $this = $("#sendMessageButton");
             $this.prop("disabled", true);
 
             $.ajax({
                 url: "send-email",
-                type: "GET",
+                type: "POST",
+                headers:{
+                        'X-CSRF-TOKEN': CSRF
+                },
                 data: {
                     name: name,
                     email: email,
                     subject: subject,
-                    message: message
+                    message: message,
                 },
                 cache: false,
                 success: function () {

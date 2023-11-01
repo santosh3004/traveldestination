@@ -19,7 +19,7 @@
 
 
     <!-- Booking Start -->
-    @include('front.incl.booking')
+    {{-- @include('front.incl.booking') --}}
     <!-- Booking End -->
 
 
