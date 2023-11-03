@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(('/'), [FrontController::class,'home'])->name('home');
-
 Route::get('/about', [FrontController::class,'about'])->name('about');
 Route::get('/services', [FrontController::class,'services'])->name('services');
 Route::get('/packages', [FrontController::class,'packages'])->name('packages');
 Route::get('/contact', [FrontController::class,'contact'])->name('contact');
+Route::post('/subscription', [FrontController::class, 'subscription'])->name('subscription');
+
+
 
 Route::post('/send-email',[EmailController::class,'index'])->name('sendmail');
 
@@ -37,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/subscription', [FrontController::class, 'subscription'])->name('subscription');
+
 
 
 Route::get('/dashboard', function() {
@@ -45,5 +47,6 @@ Route::get('/dashboard', function() {
 })->name('dashboard');
 
 Route::resource('destination', 'App\Http\Controllers\DestinationController');
+Route::resource('package','App\Http\Controllers\PackageController');
 
 require __DIR__.'/auth.php';

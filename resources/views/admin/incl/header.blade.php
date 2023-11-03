@@ -188,18 +188,18 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{{route('dashboard')}}">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" data-bs-toggle="collapse" href="#destination-submenu" aria-expanded="false" aria-controls="destination-submenu">
                 <span class="menu-title">Destinations</span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
+              <div class="collapse" id="destination-submenu">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="{{route('destination.create')}}">Insert</a></li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('destination.index')}}">Manage</a></li>
@@ -207,80 +207,80 @@
               </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#packages-submenu" aria-expanded="false" aria-controls="packages-submenu">
                   <span class="menu-title">Packages</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="packages-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('package.create')}}">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{route('package.index')}}">Manage</a></li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#mails-submenu" aria-expanded="false" aria-controls="mails-submenu">
                   <span class="menu-title">Mails</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="mails-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Manage</a></li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#testimonials-submenu" aria-expanded="false" aria-controls="testimonials-submenu">
                   <span class="menu-title">Testimonials</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="testimonials-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Manage</a></li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                  <span class="menu-title">File Manager</span>
+                <a class="nav-link" data-bs-toggle="collapse" href="#teams-submenu" aria-expanded="false" aria-controls="teams-submenu">
+                  <span class="menu-title">Teams</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="teams-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Manage</a></li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#companyinfo-submenu" aria-expanded="false" aria-controls="companyinfo-submenu">
                   <span class="menu-title">Company Information</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="companyinfo-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Manage</a></li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <a class="nav-link" data-bs-toggle="collapse" href="#subs-submenu" aria-expanded="false" aria-controls="subs-submenu">
                   <span class="menu-title">Subscriptions</span>
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse" id="ui-basic">
+                <div class="collapse" id="subs-submenu">
                   <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Manage</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="">Manage</a></li>
                   </ul>
                 </div>
               </li>

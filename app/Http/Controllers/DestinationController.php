@@ -50,7 +50,7 @@ class DestinationController extends Controller
         $destination->img = $finalname;
 
         $destination->save();
-        return redirect(route('destination.index'));
+        return redirect()->route('destination.index');
     }
 
     /**
