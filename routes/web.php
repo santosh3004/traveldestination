@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\destination;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmailController;
@@ -26,9 +27,9 @@ Route::get('/contact', [FrontController::class,'contact'])->name('contact');
 Route::post('/send-email',[EmailController::class,'index'])->name('sendmail');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,5 +38,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/subscription', [FrontController::class, 'subscription'])->name('subscription');
+
+
+Route::get('/dashboard', function() {
+    return view('admin.views.index');
+})->name('dashboard');
+
+Route::resource('destination', 'App\Http\Controllers\DestinationController');
 
 require __DIR__.'/auth.php';

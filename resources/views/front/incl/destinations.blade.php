@@ -9,7 +9,7 @@
 
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="{{asset('front/img/'.$destination->img)}}" alt="">
+                    <img class="img-fluid" src="{{asset('admin/destinations/'.$destination->img)}}" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">{{$destination->name}}</h5>
                         <span>{{$destination->cities}} Cities</span>
