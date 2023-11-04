@@ -32,9 +32,11 @@
                             <div class="form-group">
                                 <select name="destination" class="custom-select px-4" style="height: 47px;">
                                     <option selected>Select a destination</option>
-                                    <option value="1">destination 1</option>
-                                    <option value="2">destination 1</option>
-                                    <option value="3">destination 1</option>
+                                    @if ($destinations!=null)
+                      @foreach ($destinations as $destination)
+                          <option value="{{$destination->id}}">{{$destination->name}}</option>
+                      @endforeach
+                  @endif
                                 </select>
                             </div>
                             <div>

@@ -77,7 +77,9 @@ class PackageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $package=Package::findOrFail($id)->first();
+        $destinations=Destination::all();
+        return view('admin.views.packages.edit',compact('package','destinations'));
     }
 
     /**
@@ -89,7 +91,26 @@ class PackageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $package=Package::findOrFail($id)->first();
+
+        $oldFile=public_path('admin/packages/'.$package->img);
+        File::delete($oldFile);
+        $package->delete();
+
+        $package->destination_id=$request->destination;
+        $package->persons=$request->person;
+        $package->duration=$request->duration;
+        $package->price=$request->price;
+        $package->description=$request->description;
+
+        $filename = str_replace(' ','',request('destination_id'));
+        $ext = $request->file->extension();
+        $finalname = $filename.'_'.time().'.'.$ext;
+        $request->file->move(public_path('admin/packages/'),$finalname);
+        $package->img = $finalname;
+
+        $package->save();
+        return redirect()->route('package.index');
     }
 
     /**

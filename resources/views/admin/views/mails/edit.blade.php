@@ -4,7 +4,7 @@
     <div class="col-md-6 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Package Edit form</h4>
+          <h4 class="card-title">Package form</h4>
 
           <form class="forms-sample" action="{{route('package.update',$package->id)}}" enctype="multipart/form-data" method="POST">
             @csrf

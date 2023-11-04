@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\TestMail;
 
 class FrontController extends Controller
 {
@@ -48,6 +50,12 @@ class FrontController extends Controller
         if($request['destination']){
             $subscription->destination = $request->destination;
         }
+        $mailData = [
+            'title' => 'Travel Destination',
+            'body' => 'Thanks for your subscription. You will get updates from now on',
+            'subject' =>'Newletter Subscription - Travel Destination',
+        ];
+        Mail::to($request->email)->send(new TestMail($mailData));
         $subscription->save();
         return redirect()->back()->with('success', 'You have successfully subscribed to our newsletter');
     }

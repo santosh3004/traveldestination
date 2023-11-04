@@ -4,17 +4,17 @@
     <div class="col-md-6 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title">Destination form</h4>
+          <h4 class="card-title">Team Entry form</h4>
 
-          <form class="forms-sample" action="{{route('destination.store')}}" enctype="multipart/form-data" method="POST">
+          <form class="forms-sample" action="{{route('team.store')}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="form-group">
-              <label for="exampleInputUsername1">Destination Name</label>
-              <input type="text" name="name" class="form-control" id="exampleInputUsername1" placeholder="Destination Name">
+              <label for="exampleInputUsername1">Name</label>
+              <input type="text" name="name" class="form-control" id="exampleInputUsername1" placeholder="Name">
             </div>
             <div class="form-group">
-              <label for="citiesId">Cities</label>
-              <input type="number" name="cities" class="form-control" id="citiesId" placeholder="Number of Cities">
+              <label for="citiesId">Designation</label>
+              <input type="text" name="designation" class="form-control" id="citiesId" placeholder="Designation">
             </div>
             <div class="form-group">
                 <label>Image upload</label>
@@ -24,7 +24,7 @@
                 </div>
               </div>
             <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-            <a href="{{route('destination.index')}}" class="btn btn-light">Cancel</a>
+            <a href="{{route('team.index')}}" class="btn btn-light">Cancel</a>
           </form>
         </div>
       </div>

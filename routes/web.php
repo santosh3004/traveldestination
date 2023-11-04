@@ -22,11 +22,11 @@ Route::get('/about', [FrontController::class,'about'])->name('about');
 Route::get('/services', [FrontController::class,'services'])->name('services');
 Route::get('/packages', [FrontController::class,'packages'])->name('packages');
 Route::get('/contact', [FrontController::class,'contact'])->name('contact');
-Route::post('/subscription', [FrontController::class, 'subscription'])->name('subscription');
+Route::post('/subscribe', [FrontController::class, 'subscription'])->name('subscription');
 
 
 
-Route::post('/send-email',[EmailController::class,'index'])->name('sendmail');
+Route::post('/send-email',[EmailController::class,'store'])->name('sendmail');
 
 
 // Route::get('/dashboard', function () {
@@ -48,5 +48,10 @@ Route::get('/dashboard', function() {
 
 Route::resource('destination', 'App\Http\Controllers\DestinationController');
 Route::resource('package','App\Http\Controllers\PackageController');
+Route::resource('mail','App\Http\Controllers\EmailController');
+Route::resource('team','App\Http\Controllers\GuideController');
+Route::resource('siteconfig','App\Http\Controllers\SiteConfigController');
+Route::resource('testimonial','App\Http\Controllers\TestimonialController');
+Route::resource('subscription','App\Http\Controllers\SubscriptionController');
 
 require __DIR__.'/auth.php';

@@ -12,7 +12,7 @@ class Destination extends Model
 
     public function packages()
     {
-        return $this->belongsToMany(Package::class, 'destination_id', 'package_id');
+        return $this->belongsToMany(Package::class, 'destination_id', 'id');
     }
 
 }

@@ -10,7 +10,7 @@ use App\Models\ContactMessage;
 
 class EmailController extends Controller
 {
-    public function index(Request $request)
+    public function store(Request $request)
     {
 
         $mailData = [
@@ -29,4 +29,5 @@ class EmailController extends Controller
 
         return response([$status=200]);
     }
+
 }

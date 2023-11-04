@@ -6,37 +6,35 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Destinations</h4>
+        <h4 class="card-title">Teams</h4>
         </p>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th> Destination </th>
+              <th> Team </th>
               <th> Name </th>
-              <th> Cities </th>
-              {{-- <th> Status </th> --}}
+              <th> Designation </th>
               <th> Action </th>
             </tr>
           </thead>
           <tbody>
-            @if ($destinations!=null)
-                @foreach ($destinations as $destination)
+            @if ($teams!=null)
+                @foreach ($teams as $team)
                 <tr>
                     <td class="py-1">
-                      <img src="{{asset('admin/destinations/'.$destination->img)}}" alt="image" />
+                      <img src="{{asset('admin/teams/'.$team->img)}}" alt="image" />
                     </td>
-                    <td> {{$destination->name}} </td>
+                    <td> {{$team->name}} </td>
                     <td>
-                      {{$destination->cities}}
+                      {{$team->designation}}
                     </td>
-                    {{-- <td> Shown </td> --}}
                     <td> <div class="btn-group-vertical" role="group" aria-label="Basic example">
                       <div class="btn-group">
                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">Actions</button>
                         <div class="dropdown-menu">
 
-                          <a href="{{route('destination.edit',$destination->id)}}" class="dropdown-item">Edit</a>
-                         <form action="{{route('destination.destroy',$destination->id)}}" method="POST" enctype="multipart/form-data">
+                          <a href="{{route('team.edit',$team->id)}}" class="dropdown-item">Edit</a>
+                         <form action="{{route('team.destroy',$team->id)}}" method="POST" enctype="multipart/form-data">
                               @csrf
                               @method('DELETE') <button type="submit" class="dropdown-item">Delete</button></form>
                         </div>

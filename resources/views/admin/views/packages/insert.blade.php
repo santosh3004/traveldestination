@@ -31,7 +31,7 @@
                 <input type="number" name="person" class="form-control" id="citiesId" placeholder="Persons">
               </div>
               <div class="form-group">
-                <label for="exampleTextarea1">Textarea</label>
+                <label for="exampleTextarea1">Description</label>
                 <textarea name="description" maxlength="150" class="form-control" id="exampleTextarea1" rows="4"></textarea>
               </div>
             <div class="form-group">
@@ -42,7 +42,7 @@
                 </div>
               </div>
             <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-            <a href="{{route('package.create')}}" class="btn btn-light">Cancel</a>
+            <a href="{{route('package.index')}}" class="btn btn-light">Cancel</a>
           </form>
         </div>
       </div>

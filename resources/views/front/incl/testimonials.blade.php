@@ -9,7 +9,7 @@
 
 
             <div class="text-center pb-4">
-                <img class="img-fluid mx-auto" src="{{asset('front/img/'.$testimonial->img)}}" style="width: 100px; height: 100px;" >
+                <img class="img-fluid mx-auto" src="{{asset('admin/testimonials/'.$testimonial->img)}}" style="width: 100px; height: 100px;" >
                 <div class="testimonial-text bg-white p-4 mt-n5">
                     <p class="mt-5">{{$testimonial->comment}}
                     </p>
