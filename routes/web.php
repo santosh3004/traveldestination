@@ -37,21 +37,35 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/dashboard', function() {
+        return view('admin.views.index');
+    })->name('dashboard');
+
+    Route::resource('destination', 'App\Http\Controllers\DestinationController');
+    Route::resource('package','App\Http\Controllers\PackageController');
+    Route::resource('mail','App\Http\Controllers\EmailController');
+    Route::resource('team','App\Http\Controllers\GuideController');
+    Route::resource('siteconfig','App\Http\Controllers\SiteConfigController');
+    Route::resource('testimonial','App\Http\Controllers\TestimonialController');
+    Route::resource('subscription','App\Http\Controllers\SubscriptionController');
+    Route::resource('contactmessage','App\Http\Controllers\ContactMessageController');
 });
 
 
 
 
-Route::get('/dashboard', function() {
-    return view('admin.views.index');
-})->name('dashboard');
+// Route::get('/dashboard', function() {
+//     return view('admin.views.index');
+// })->name('dashboard');
 
-Route::resource('destination', 'App\Http\Controllers\DestinationController');
-Route::resource('package','App\Http\Controllers\PackageController');
-Route::resource('mail','App\Http\Controllers\EmailController');
-Route::resource('team','App\Http\Controllers\GuideController');
-Route::resource('siteconfig','App\Http\Controllers\SiteConfigController');
-Route::resource('testimonial','App\Http\Controllers\TestimonialController');
-Route::resource('subscription','App\Http\Controllers\SubscriptionController');
+// Route::resource('destination', 'App\Http\Controllers\DestinationController');
+// Route::resource('package','App\Http\Controllers\PackageController');
+// Route::resource('mail','App\Http\Controllers\EmailController');
+// Route::resource('team','App\Http\Controllers\GuideController');
+// Route::resource('siteconfig','App\Http\Controllers\SiteConfigController');
+// Route::resource('testimonial','App\Http\Controllers\TestimonialController');
+// Route::resource('subscription','App\Http\Controllers\SubscriptionController');
+// Route::resource('contactmessage','App\Http\Controllers\ContactMessageController');
 
 require __DIR__.'/auth.php';
