@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Purple Admin</title>
+    <title>Travel Destination</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('admin/assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/assets/vendors/css/vendor.bundle.base.css')}}">
@@ -39,12 +39,12 @@
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
-                  <p class="mb-1 text-black">David Greymaax</p>
+                  <p class="mb-1 text-black">{{Auth::user()->name}}</p>
                 </div>
               </a>
               <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
+                {{-- <a class="dropdown-item" href="#">
+                  <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a> --}}
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">
                   <i class="mdi mdi-logout me-2 text-primary"></i> <form method="POST" action="{{ route('logout') }}">
@@ -58,11 +58,11 @@
             </li>
 
 
-            <li class="nav-item nav-logout d-none d-lg-block">
+            {{-- <li class="nav-item nav-logout d-none d-lg-block">
               <a class="nav-link" href="#">
                 <i class="mdi mdi-power"></i>
               </a>
-            </li>
+            </li> --}}
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
@@ -82,10 +82,10 @@
                   <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
-                  <span class="font-weight-bold mb-2">David Grey. H</span>
-                  <span class="text-secondary text-small">Project Manager</span>
+                  <span class="font-weight-bold mb-2">{{Auth::user()->name}}</span>
+                  <span class="text-secondary text-small">{{ucfirst(Auth::user()->designation)}}</span>
                 </div>
-                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                {{-- <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i> --}}
               </a>
             </li>
             <li class="nav-item @if(Route::currentRouteName()=='dashboard')
@@ -218,7 +218,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item @if(Route::currentRouteName()=='subscription.create'||Route::currentRouteName()=='subscription.insert')
+              <li class="nav-item @if(Route::currentRouteName()=='subscription.create'||Route::currentRouteName()=='subscription.index')
               active
           @endif">
                 <a class="nav-link" data-bs-toggle="collapse" href="#subs-submenu" aria-expanded="false" aria-controls="subs-submenu">
@@ -226,19 +226,43 @@
                   <i class="menu-arrow"></i>
                   <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                 </a>
-                <div class="collapse @if(Route::currentRouteName()=='subscription.create'||Route::currentRouteName()=='subscription.insert')
+                <div class="collapse @if(Route::currentRouteName()=='subscription.create'||Route::currentRouteName()=='subscription.inidex')
                 show
             @endif" id="subs-submenu">
                   <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link @if(Route::currentRouteName()=='subscription.create')
                         active
                     @endif" href="{{route('subscription.create')}}">Insert</a></li>
-                    <li class="nav-item"> <a class="nav-link @if(Route::currentRouteName()=='subscription.insert')
+                    <li class="nav-item"> <a class="nav-link @if(Route::currentRouteName()=='subscription.index')
                         active
                     @endif" href="{{route('subscription.index')}}">Manage</a></li>
                   </ul>
                 </div>
               </li>
+              @if (Auth::user()->designation=='admin')
+                  <li class="nav-item @if(Route::currentRouteName()=='register'||Route::currentRouteName()=='users')
+              active
+          @endif">
+                <a class="nav-link" data-bs-toggle="collapse" href="#users-submenu" aria-expanded="false" aria-controls="users-submenu">
+                  <span class="menu-title">Users</span>
+                  <i class="menu-arrow"></i>
+                  <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse @if(Route::currentRouteName()=='register'||Route::currentRouteName()=='users')
+                show
+            @endif" id="users-submenu">
+                  <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link @if(Route::currentRouteName()=='register')
+                        active
+                    @endif" href="{{route('register')}}">Insert</a></li>
+                    <li class="nav-item"> <a class="nav-link @if(Route::currentRouteName()=='users')
+                        active
+                    @endif" href="{{route('users')}}">Manage</a></li>
+                  </ul>
+                </div>
+              </li>
+              @endif
+
 
 
           </ul>

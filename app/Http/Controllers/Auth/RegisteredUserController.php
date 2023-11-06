@@ -15,6 +15,13 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
+
+    public function index()
+    {
+        $users=User::where('designation','!=','admin')->get();
+       return view('admin.views.users.index',compact('users'));
+    }
+
     /**
      * Display the registration view.
      */
@@ -42,9 +49,9 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }
