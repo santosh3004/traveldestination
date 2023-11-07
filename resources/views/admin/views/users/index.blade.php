@@ -6,12 +6,11 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Destinations</h4>
+        <h4 class="card-title">Users</h4>
         </p>
         <table class="table table-striped">
           <thead>
             <tr>
-
               <th> Name </th>
               <th> Email </th>
               <th> Designation </th>

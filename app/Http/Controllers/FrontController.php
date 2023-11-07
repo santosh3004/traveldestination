@@ -18,8 +18,9 @@ class FrontController extends Controller
     }
     public function about()
     {
+        $destinations = \App\Models\Destination::all();
         $guides = \App\Models\Guide::all();
-        return view('front/views/about', compact('guides'));
+        return view('front/views/about', compact('guides','destinations'));
     }
     public function services()
     {
