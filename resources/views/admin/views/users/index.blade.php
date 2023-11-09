@@ -3,10 +3,24 @@
 
 
 
+@if (session('status')==='user-updated')
+
+
+            @include('admin.incl.alert')
+        @endif
+        @if (session('status')==='user-deleted')
+
+@include('admin.incl.alert')
+    @endif
+    @if (session('status')==='user-added')
+ 
+    @include('admin.incl.alert')
+        @endif
+
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Users</h4>
+        <h4 class="card-title">Users </h4>
         </p>
         <table class="table table-striped">
           <thead>
@@ -27,17 +41,17 @@
                       {{$user->email}}
                     </td>
                     <td>{{Str::ucfirst($user->designation)}}</td>
-                    {{-- <td> <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                    <td> <div class="btn-group-vertical" role="group" aria-label="Basic example">
                       <div class="btn-group">
                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">Actions</button>
                         <div class="dropdown-menu">
 
-                          <a href="{{route('user.edit',$user->id)}}" class="dropdown-item">Edit</a>
-                         <form action="{{route('user.destroy',$user->id)}}" method="POST" enctype="multipart/form-data">
+                          <a href="{{route('users.edit',$user->id)}}" class="dropdown-item">Edit</a>
+                         <form action="{{route('users.destroy',$user->id)}}" method="POST" enctype="multipart/form-data">
                               @csrf
                               @method('DELETE') <button type="submit" class="dropdown-item">Delete</button></form>
                         </div>
-                      </div></td> --}}
+                      </div></td>
                   </tr>
                 @endforeach
             @endif

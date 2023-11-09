@@ -49,7 +49,7 @@ class TestimonialController extends Controller
 
         $testimonial->img=$finalname;
         $testimonial->save();
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('status','testimonial-added')->with('message','Testimonial Added');
     }
 
     /**
@@ -100,7 +100,7 @@ class TestimonialController extends Controller
         $oldTestimonial->img = $finalname;
 
         $oldTestimonial->save();
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('status','testimonial-updated')->with('message','Testimonial Updated');
 
     }
 
@@ -116,6 +116,6 @@ class TestimonialController extends Controller
         $oldfile=public_path('admin/destinations/'.$oldTestimonial->img);
         File::delete($oldfile);
         $oldTestimonial->delete();
-        return redirect()->route('testimonial.index');
+        return redirect()->route('testimonial.index')->with('message','Testimonial Deleted');
     }
 }

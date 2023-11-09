@@ -53,6 +53,28 @@ class RegisteredUserController extends Controller
 
         // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
+        return redirect()->route('users')->with('status','user-added')->with('message','User Added');
+    }
+
+
+    public function edit($id){
+        $user=User::findOrFail($id);
+        return view('admin.views.users.edit',compact('user'));
+    }
+
+    public function update(Request $request,$id){
+        $user=User::findOrFail($id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->save();
+        return redirect()->route('users')->with('status','user-updated')->with('message','User Updated');
+    }
+
+    public function destroy($id){
+        $user=User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users')->with('status','user-deleted')->with('message','User Deleted');
     }
 }
+

@@ -1,7 +1,19 @@
 @extends('admin.layout.app')
 @section('content')
 
+@if (session('status')==='subscription-updated')
 
+
+            @include('admin.incl.alert')
+        @endif
+        @if (session('status')==='subscription-deleted')
+
+@include('admin.incl.alert')
+    @endif
+    @if (session('status')==='subscription-added')
+  
+    @include('admin.incl.alert')
+        @endif
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">

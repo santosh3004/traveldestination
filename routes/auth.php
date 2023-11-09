@@ -43,6 +43,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('register', [RegisteredUserController::class, 'store']);
     Route::get('users', [RegisteredUserController::class, 'index'])->name('users');
+    Route::get('users/{id}', [RegisteredUserController::class, 'edit'])->name('users.edit');
+    Route::patch('users/{id}',[RegisteredUserController::class,'update'])->name('users.update');
+    Route::delete('users/{id}', [RegisteredUserController::class, 'destroy'])->name('users.destroy');
+
     });
 
 

@@ -55,7 +55,7 @@ class PackageController extends Controller
         $package->img = $finalname;
 
         $package->save();
-        return redirect()->route('package.index');
+        return redirect()->route('package.index')->with('status','package-added')->with('message','Package Added');
     }
 
     /**
@@ -110,7 +110,7 @@ class PackageController extends Controller
         $package->img = $finalname;
 
         $package->save();
-        return redirect()->route('package.index');
+        return redirect()->route('package.index')->with('status','package-updated')->with('message','Package Updated');
     }
 
     /**
@@ -125,6 +125,6 @@ class PackageController extends Controller
         $oldFile=public_path('admin/packages/'.$package->img);
         File::delete($oldFile);
         $package->delete();
-        return redirect()->route('package.index');
+        return redirect()->route('package.index')->with('status','package-deleted')->with('message','Package Deleted');
     }
 }

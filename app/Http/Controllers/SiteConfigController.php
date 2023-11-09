@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactMessage;
+use App\Models\Destination;
+use App\Models\Guide;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use App\Models\SiteConfig;
+use App\Models\Subscription;
+use App\Models\Testimonial;
 
 class SiteConfigController extends Controller
 {
@@ -75,7 +81,7 @@ class SiteConfigController extends Controller
         $siteconfig->sitekey=$request->sitekey;
         $siteconfig->sitevalue=$request->sitevalue;
         $siteconfig->save();
-        return redirect()->route('siteconfig.index');
+        return redirect()->route('siteconfig.index')->with('status','siteconfig-updated')->with('message','Company Information Updated');
     }
 
     /**
@@ -87,5 +93,15 @@ class SiteConfigController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function adminindex(){
+        $subscriptions=count(Subscription::all());
+        $messages=count(ContactMessage::all());
+        $destinations=count(Destination::all());
+        $packages=count(Package::all());
+        $teams=count(Guide::all());
+        $testimonials=count(Testimonial::all());
+        return view('admin.views.index',compact('subscriptions','messages','destinations','packages','teams','testimonials'));
     }
 }

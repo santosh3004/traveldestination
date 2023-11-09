@@ -50,7 +50,7 @@ class DestinationController extends Controller
         $destination->img = $finalname;
 
         $destination->save();
-        return redirect()->route('destination.index');
+        return redirect()->route('destination.index')->with('status','destination-added')->with('message','Destination Added');
     }
 
     /**
@@ -97,7 +97,7 @@ class DestinationController extends Controller
         $oldDestination->name=$request->name;
         $oldDestination->cities=$request->cities;
         $oldDestination->save();
-        return redirect()->route('destination.index');
+        return redirect()->route('destination.index')->with('status','destination-updated')->with('message','Destination Updated');
 
 
     }
@@ -115,6 +115,6 @@ class DestinationController extends Controller
         $oldfile=public_path('admin/destinations/'.$destination->img);
         File::delete($oldfile);
         $destination->delete();
-        return redirect()->route('destination.index');
+        return redirect()->route('destination.index')->with('status','destination-deleted')->with('message','Destination Deleted');
     }
 }

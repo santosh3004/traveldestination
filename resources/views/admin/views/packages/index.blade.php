@@ -1,7 +1,19 @@
 @extends('admin.layout.app')
 @section('content')
 
+@if (session('status')==='package-updated')
 
+
+            @include('admin.incl.alert')
+        @endif
+        @if (session('status')==='package-deleted')
+
+@include('admin.incl.alert')
+    @endif
+    @if (session('status')==='package-added')
+
+    @include('admin.incl.alert')
+        @endif
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -17,6 +29,7 @@
               <th> Person </th>
               <th> Description</th>
               <th> Price </th>
+              <th> Actions </th>
             </tr>
           </thead>
           <tbody>
@@ -32,6 +45,7 @@
                     </td>
                     <td> {{$package->persons}} </td>
                     <td> {{$package->description}} </td>
+                    <td> {{$package->price}} </td>
                     <td> <div class="btn-group-vertical" role="group" aria-label="Basic example">
                       <div class="btn-group">
                         <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">Actions</button>

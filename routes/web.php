@@ -4,6 +4,7 @@ use App\Http\Controllers\destination;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\SiteConfigController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/dashboard', function() {
-        return view('admin.views.index');
-    })->name('dashboard');
+    Route::get('/dashboard',[SiteConfigController::class,'adminindex'])->name('dashboard');
 
     Route::resource('destination', 'App\Http\Controllers\DestinationController');
     Route::resource('package','App\Http\Controllers\PackageController');

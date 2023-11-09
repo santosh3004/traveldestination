@@ -48,7 +48,7 @@ class GuideController extends Controller
 
         $team->img=$finalname;
         $team->save();
-        return redirect()->route('team.index');
+        return redirect()->route('team.index')->with('status','team-added')->with('message','Team Added');
     }
 
     /**
@@ -98,7 +98,7 @@ class GuideController extends Controller
 
         $guide->img=$finalname;
         $guide->save();
-        return redirect()->route('team.index');
+        return redirect()->route('team.index')->with('status','team-updated')->with('message','Team Updated');
 
 
     }
@@ -117,7 +117,7 @@ class GuideController extends Controller
         File::delete($oldfile);
 
         $guide->delete();
-        return redirect()->route('team.index');
+        return redirect()->route('team.index')->with('status','team-deleted')->with('message','Team Deleted');
 
     }
 }

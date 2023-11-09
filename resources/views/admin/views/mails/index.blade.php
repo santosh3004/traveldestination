@@ -1,6 +1,11 @@
 @extends('admin.layout.app')
 @section('content')
 
+@if (session('status')==='mail-replied')
+
+           
+            @include('admin.incl.alert')
+        @endif
 
 
 <div class="col-lg-12 grid-margin stretch-card">

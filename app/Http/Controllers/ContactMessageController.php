@@ -82,7 +82,7 @@ class ContactMessageController extends Controller
         ];
 
         Mail::to($message->email)->send(new TestMail($mailData));
-        return redirect()->route('contactmessage.index');
+        return redirect()->route('contactmessage.index')->with('status','mail-replied')->with('message','Mail Replied');
     }
 
     /**

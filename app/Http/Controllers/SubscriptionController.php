@@ -60,7 +60,7 @@ class SubscriptionController extends Controller
         Mail::to($request->email)->send(new TestMail($mailData));
 
         $subscription->save();
-        return redirect()->route('subscription.index');
+        return redirect()->route('subscription.index')->with('status','subscription-added')->with('message','Subscription Added');
     }
 
     /**
@@ -111,7 +111,7 @@ class SubscriptionController extends Controller
         Mail::to($subscription->email)->send(new TestMail($mailData));
 
         $subscription->save();
-        return redirect()->route('subscription.index');
+        return redirect()->route('subscription.index')->with('status','subscription-updated')->with('message','Subscription Updated');
     }
 
     /**
