@@ -1,16 +1,20 @@
 @extends('admin.layout.app')
 @section('content')
+@if (session('status')==='profile-updated')
+
+
+            @include('admin.incl.alert')
+        @endif
+        @if (session('status')==='password-updated')
+
+@include('admin.incl.alert')
+    @endif
+
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
             <div class="max-w-xl">
-                <h4 class="card-title">Profile</h4> @if (session('status')==='profile-updated')
-
-                    <label class="text-success">Profile Updated</label>
-                @endif
-                @if (session('status') === 'password-updated')
-                <label class="text-success">Password Updated</label>
-                @endif
+                <h4 class="card-title">Profile</h4>
             </div>
         </div>
         <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
