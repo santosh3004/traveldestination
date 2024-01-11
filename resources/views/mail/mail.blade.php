@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AllPHPTricks.com</title>
+    <title>Travel Destination</title>
 </head>
 <body>
     <h1>{{ $mailData['title'] }}</h1>
